@@ -1,0 +1,11 @@
+:root {
+	--color-text: #24292e;
+}
+
+html {
+	color: var(--color-text);
+}
+
+.block-heading {
+	background-color: #eee;
+}

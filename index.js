@@ -1,9 +1,9 @@
-import postcss from "postcss";
+const postcss = require("postcss");
 
-export default postcss.plugin("postcss-scope-to", options => {
+module.exports = postcss.plugin("postcss-scope-to", options => {
 	const defaults = {
-		// The selector we're working under.
-		scopedTo: "[data-block]",
+		// The selector we're working within.
+		scopeTo: "[data-block]",
 		// Increase specificity by repeating the selector.
 		repeat: 1
 	};
@@ -17,20 +17,14 @@ export default postcss.plugin("postcss-scope-to", options => {
 				if (
 					selector === "html" ||
 					selector === ":root" ||
-					selector === opts.scopedTo
+					selector === opts.scopeTo
 				) {
 					let topElems = new RegExp(selector, "g");
-					return selector.replace(topElems, opts.scopedTo.repeat(opts.repeat));
+					return selector.replace(topElems, opts.scopeTo.repeat(opts.repeat));
 				}
 
-				// Replace the selector itself if the selector is a `root` level component
-				// if (selector === "body") {
-				// 	let bodyTag = new RegExp(selector, "g");
-				// 	return selector.replace(bodyTag, `${opts.scopedTo.repeat(opts.repeat)}>*`);
-				// }
-
 				// For anything else add it before the selector.
-				return `${opts.scopedTo.repeat(opts.repeat)} ${selector}`;
+				return `${opts.scopeTo.repeat(opts.repeat)} ${selector}`;
 			});
 		});
 	};

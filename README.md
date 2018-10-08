@@ -7,11 +7,31 @@
 [PostCSS Scope To] lets you do this in CSS.
 
 ```pcss
-.example {}
+:root {
+  --color-text: #24292e;
+}
+
+html {
+  color: var(--color-text);
+}
+
+.block-heading {
+  background-color: #eee;
+}
 
 /* becomes */
 
-.example {}
+[data-block] {
+  --color-text: #24292e;
+}
+
+[data-block] {
+  color: var(--color-text);
+}
+
+[data-block] .block-heading {
+  background-color: #eee;
+}
 ```
 
 ## Usage
@@ -25,7 +45,7 @@ npm install postcss-scope-to --save-dev
 Use [PostCSS Scope To] to process your CSS:
 
 ```js
-const postcssScopeTo = require('postcss-scope-to');
+const postcssScopeTo = require("postcss-scope-to");
 
 postcssScopeTo.process(YOUR_CSS /*, processOptions, pluginOptions */);
 ```
@@ -33,18 +53,19 @@ postcssScopeTo.process(YOUR_CSS /*, processOptions, pluginOptions */);
 Or use it as a [PostCSS] plugin:
 
 ```js
-const postcss = require('postcss');
-const postcssScopeTo = require('postcss-scope-to');
+const postcss = require("postcss");
+const postcssScopeTo = require("postcss-scope-to");
 
-postcss([
-  postcssScopeTo(/* pluginOptions */)
-]).process(YOUR_CSS /*, processOptions */);
+postcss([postcssScopeTo(/* pluginOptions */)]).process(
+  YOUR_CSS /*, processOptions */
+);
 ```
 
 [PostCSS Scope To] runs in all Node environments, with special instructions for:
 
 | [Node](INSTALL.md#node) | [PostCSS CLI](INSTALL.md#postcss-cli) | [Webpack](INSTALL.md#webpack) | [Create React App](INSTALL.md#create-react-app) | [Gulp](INSTALL.md#gulp) | [Grunt](INSTALL.md#grunt) |
-| --- | --- | --- | --- | --- | --- |
+| ----------------------- | ------------------------------------- | ----------------------------- | ----------------------------------------------- | ----------------------- | ------------------------- |
+
 
 [cli-img]: https://img.shields.io/travis/m-e-h/postcss-scope-to.svg
 [cli-url]: https://travis-ci.org/m-e-h/postcss-scope-to
@@ -52,6 +73,5 @@ postcss([
 [git-url]: https://gitter.im/postcss/postcss
 [npm-img]: https://img.shields.io/npm/v/postcss-scope-to.svg
 [npm-url]: https://www.npmjs.com/package/postcss-scope-to
-
-[PostCSS]: https://github.com/postcss/postcss
-[PostCSS Scope To]: https://github.com/m-e-h/postcss-scope-to
+[postcss]: https://github.com/postcss/postcss
+[postcss scope to]: https://github.com/m-e-h/postcss-scope-to

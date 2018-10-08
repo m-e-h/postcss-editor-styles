@@ -1,0 +1,11 @@
+[data-block] {
+	--color-text: #24292e;
+}
+
+[data-block] {
+	color: var(--color-text);
+}
+
+[data-block] .block-heading {
+	background-color: #eee;
+}
