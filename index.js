@@ -1,60 +1,50 @@
-const postcss = require("postcss");
+const postcss = require('postcss')
 
-module.exports = postcss.plugin("postcss-scope-to", options => {
+module.exports = postcss.plugin('postcss-scope-to', options => {
+  const defaults = {
+        // The selector we're working within.
+    scopeTo: '.editor-styles-wrapper',
 
-	const defaults = {
+        // Increase specificity by repeating the selector.
+    repeat: 1,
 
-		// The selector we're working within.
-		scopeTo: ".editor-styles-wrapper",
+    remove: ['html', ':hover', ':focus'],
 
-		// Increase specificity by repeating the selector.
-		repeat: 1,
+    replace: ['body'],
 
-		// The selector we're working within.
-		avoid: "[class^= 'components-']"
+    ignore: [':root'],
 
-	};
+    tags: ['a', 'button', 'input', 'label', 'select', 'textarea', 'form']
+  }
 
-	// const selectorElementRE = /^[a-zA-Z]/
-	const opts = Object.assign({}, defaults, options);
-	const tagElems = [
-		'a',
-		'button',
-		'input',
-		'label',
-		'select',
-		'textarea'
-	];
+  const opts = Object.assign({}, defaults, options)
 
-	return root => {
-		root.walkRules(rule => {
-			rule.selectors = rule.selectors.map(selector => {
-				// Replace the selector itself if the selector is a `root` level component
-				if (
-					selector === "html" ||
-					selector === ":root" ||
-					selector === opts.scopeTo
-				) {
-					return opts.scopeTo.repeat(opts.repeat);
-				}
+  return root => {
+    root.walkRules(rule => {
+      rule.selectors = rule.selectors.map(selector => {
+        if (opts.remove.indexOf(selector) !== -1) {
+          return rule.remove()
+        }
 
-				// if (selector === "body") {
-				// 	return `${opts.scopeTo}>div`;
-				// }
+        if (opts.replace.indexOf(selector) !== -1) {
+          return opts.scopeTo.repeat(opts.repeat)
+        }
 
-				if (selector.indexOf('body') !== -1) {
+        if (opts.ignore.indexOf(selector) !== -1) {
+          return selector
+        }
 
-					return selector.replace(/body/g, `${opts.scopeTo}>div`);
-				}
+        if (opts.tags.indexOf(selector) != -1) {
+          return `${opts.scopeTo.repeat(opts.repeat)} ${selector}${opts.suffix}`
+        }
 
-				if (tagElems.indexOf(selector) != -1) {
-					let elSelect = new RegExp(selector, "g");
-					return selector.replace(elSelect, `${opts.scopeTo.repeat(opts.repeat)} ${selector}:not(${opts.avoid})`);
-				}
+        if (opts.scopeTo.indexOf(selector) !== -1) {
+          return opts.scopeTo.repeat(opts.repeat)
+        }
 
-				// For anything else add it before the selector.
-				return `${opts.scopeTo.repeat(opts.repeat)} ${selector}`;
-			});
-		});
-	};
-});
+                // For anything else add it before the selector.
+        return `${opts.scopeTo.repeat(opts.repeat)} ${selector}`
+      })
+    })
+  }
+})
