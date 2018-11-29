@@ -1,50 +1,52 @@
 const postcss = require('postcss')
 
-module.exports = postcss.plugin('postcss-scope-to', options => {
-  const defaults = {
-        // The selector we're working within.
-    scopeTo: '.editor-styles-wrapper',
+module.exports = postcss.plugin('postcss-editor-styles', options => {
+	const defaults = {
+		// The selector we're working within.
+		scopeTo: '.editor-styles-wrapper',
 
-        // Increase specificity by repeating the selector.
-    repeat: 1,
+		// Increase specificity by repeating the selector.
+		repeat: 1,
 
-    remove: ['html', ':hover', ':focus'],
+		remove: ['html'],
 
-    replace: ['body'],
+		replace: ['body'],
 
-    ignore: [':root'],
+		ignore: [':root'],
 
-    tags: ['a', 'button', 'input', 'label', 'select', 'textarea', 'form']
-  }
+		tags: ['a', 'button', 'input', 'label', 'select', 'textarea', 'form'],
 
-  const opts = Object.assign({}, defaults, options)
+		tagSuffix: ':not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns])'
+	}
 
-  return root => {
-    root.walkRules(rule => {
-      rule.selectors = rule.selectors.map(selector => {
-        if (opts.remove.indexOf(selector) !== -1) {
-          return rule.remove()
-        }
+	const opts = Object.assign({}, defaults, options)
 
-        if (opts.replace.indexOf(selector) !== -1) {
-          return opts.scopeTo.repeat(opts.repeat)
-        }
+	return root => {
+		root.walkRules(rule => {
+			rule.selectors = rule.selectors.map(selector => {
+				if (opts.remove.indexOf(selector) !== -1) {
+					return rule.remove()
+				}
 
-        if (opts.ignore.indexOf(selector) !== -1) {
-          return selector
-        }
+				if (opts.replace.indexOf(selector) !== -1) {
+					return opts.scopeTo.repeat(opts.repeat)
+				}
 
-        if (opts.tags.indexOf(selector) != -1) {
-          return `${opts.scopeTo.repeat(opts.repeat)} ${selector}${opts.suffix}`
-        }
+				if (opts.ignore.indexOf(selector) !== -1) {
+					return selector
+				}
 
-        if (opts.scopeTo.indexOf(selector) !== -1) {
-          return opts.scopeTo.repeat(opts.repeat)
-        }
+				if (opts.tags.indexOf(selector) != -1) {
+					return `${opts.scopeTo.repeat(opts.repeat)} ${selector}${opts.tagSuffix}`
+				}
 
-                // For anything else add it before the selector.
-        return `${opts.scopeTo.repeat(opts.repeat)} ${selector}`
-      })
-    })
-  }
+				if (opts.scopeTo.indexOf(selector) !== -1) {
+					return opts.scopeTo.repeat(opts.repeat)
+				}
+
+				// For anything else add it before the selector.
+				return `${opts.scopeTo.repeat(opts.repeat)} ${selector}`
+			})
+		})
+	}
 })

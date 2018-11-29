@@ -1,5 +1,5 @@
 module.exports = {
-	'postcss-scope-to': {
+	'postcss-editor-styles': {
 		'basic': {
 			message: 'supports basic usage'
 		}

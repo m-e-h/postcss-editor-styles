@@ -1,12 +1,12 @@
 {
-  "name": "postcss-scope-to",
+  "name": "postcss-editor-styles",
   "version": "0.1.0",
   "description": "Remove your CSS from the global scope ",
   "author": "m-e-h <info@martyhelmick.com>",
   "license": "CC0-1.0",
-  "repository": "m-e-h/postcss-scope-to",
-  "homepage": "https://github.com/m-e-h/postcss-scope-to#readme",
-  "bugs": "https://github.com/m-e-h/postcss-scope-to/issues",
+  "repository": "m-e-h/postcss-editor-styles",
+  "homepage": "https://github.com/m-e-h/postcss-editor-styles#readme",
+  "bugs": "https://github.com/m-e-h/postcss-editor-styles/issues",
   "main": "index.js",
   "scripts": {
     "prepublishOnly": "npm test",
@@ -28,7 +28,7 @@
     "pre-commit": "^1.2.2"
   },
   "eslintConfig": {
-    "extends": "dev",
+    "extends": "wordpress",
     "parser": "babel-eslint"
   },
   "keywords": [

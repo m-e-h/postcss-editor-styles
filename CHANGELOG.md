@@ -1,4 +1,4 @@
-# Changes to PostCSS Scope To
+# Changes to PostCSS Editor Styles
 
 ### 0.1.0 (October 4, 2018)
 

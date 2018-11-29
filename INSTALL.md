@@ -1,22 +1,22 @@
-# Installing PostCSS Scope To
+# Installing PostCSS Editor Styles
 
-[PostCSS Scope To] runs in all Node environments, with special instructions for:
+[PostCSS Editor Styles] runs in all Node environments, with special instructions for:
 
 | [Node](#node) | [PostCSS CLI](#postcss-cli) | [Webpack](#webpack) | [Create React App](#create-react-app) | [Gulp](#gulp) | [Grunt](#grunt) |
 | --- | --- | --- | --- | --- | --- |
 
 ## Node
 
-Add [PostCSS Scope To] to your project:
+Add [PostCSS Editor Styles] to your project:
 
 ```bash
-npm install postcss-scope-to --save-dev
+npm install postcss-editor-styles --save-dev
 ```
 
-Use [PostCSS Scope To] to process your CSS:
+Use [PostCSS Editor Styles] to process your CSS:
 
 ```js
-const postcssScopeTo = require('postcss-scope-to');
+const postcssScopeTo = require('postcss-editor-styles');
 
 postcssScopeTo.process(YOUR_CSS /*, processOptions, pluginOptions */);
 ```
@@ -25,7 +25,7 @@ Or use it as a [PostCSS] plugin:
 
 ```js
 const postcss = require('postcss');
-const postcssScopeTo = require('postcss-scope-to');
+const postcssScopeTo = require('postcss-editor-styles');
 
 postcss([
   postcssScopeTo(/* pluginOptions */)
@@ -40,10 +40,10 @@ Add [PostCSS CLI] to your project:
 npm install postcss-cli --save-dev
 ```
 
-Use [PostCSS Scope To] in your `postcss.config.js` configuration file:
+Use [PostCSS Editor Styles] in your `postcss.config.js` configuration file:
 
 ```js
-const postcssScopeTo = require('postcss-scope-to');
+const postcssScopeTo = require('postcss-editor-styles');
 
 module.exports = {
   plugins: [
@@ -60,10 +60,10 @@ Add [PostCSS Loader] to your project:
 npm install postcss-loader --save-dev
 ```
 
-Use [PostCSS Scope To] in your Webpack configuration:
+Use [PostCSS Editor Styles] in your Webpack configuration:
 
 ```js
-const postcssScopeTo = require('postcss-scope-to');
+const postcssScopeTo = require('postcss-editor-styles');
 
 module.exports = {
   module: {
@@ -94,12 +94,12 @@ Add [React App Rewired] and [React App Rewire PostCSS] to your project:
 npm install react-app-rewired react-app-rewire-postcss --save-dev
 ```
 
-Use [React App Rewire PostCSS] and [PostCSS Scope To] in your
+Use [React App Rewire PostCSS] and [PostCSS Editor Styles] in your
 `config-overrides.js` file:
 
 ```js
 const reactAppRewirePostcss = require('react-app-rewire-postcss');
-const postcssScopeTo = require('postcss-scope-to');
+const postcssScopeTo = require('postcss-editor-styles');
 
 module.exports = config => reactAppRewirePostcss(config, {
   plugins: () => [
@@ -116,11 +116,11 @@ Add [Gulp PostCSS] to your project:
 npm install gulp-postcss --save-dev
 ```
 
-Use [PostCSS Scope To] in your Gulpfile:
+Use [PostCSS Editor Styles] in your Gulpfile:
 
 ```js
 const postcss = require('gulp-postcss');
-const postcssScopeTo = require('postcss-scope-to');
+const postcssScopeTo = require('postcss-editor-styles');
 
 gulp.task('css', () => gulp.src('./src/*.css').pipe(
   postcss([
@@ -139,10 +139,10 @@ Add [Grunt PostCSS] to your project:
 npm install grunt-postcss --save-dev
 ```
 
-Use [PostCSS Scope To] in your Gruntfile:
+Use [PostCSS Editor Styles] in your Gruntfile:
 
 ```js
-const postcssScopeTo = require('postcss-scope-to');
+const postcssScopeTo = require('postcss-editor-styles');
 
 grunt.loadNpmTasks('grunt-postcss');
 
@@ -165,6 +165,6 @@ grunt.initConfig({
 [PostCSS]: https://github.com/postcss/postcss
 [PostCSS CLI]: https://github.com/postcss/postcss-cli
 [PostCSS Loader]: https://github.com/postcss/postcss-loader
-[PostCSS Scope To]: https://github.com/m-e-h/postcss-scope-to
+[PostCSS Editor Styles]: https://github.com/m-e-h/postcss-editor-styles
 [React App Rewire PostCSS]: https://github.com/csstools/react-app-rewire-postcss
 [React App Rewired]: https://github.com/timarney/react-app-rewired

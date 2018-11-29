@@ -1,51 +1,63 @@
-# PostCSS Scope To [<img src="https://postcss.github.io/postcss/logo.svg" alt="PostCSS" width="90" height="90" align="right">][postcss]
+# PostCSS Editor Styles [<img src="https://postcss.github.io/postcss/logo.svg" alt="PostCSS" width="90" height="90" align="right">][postcss]
 
 [![NPM Version][npm-img]][npm-url]
 [![Build Status][cli-img]][cli-url]
 [![Support Chat][git-img]][git-url]
 
-[PostCSS Scope To] lets you do this in CSS.
+[PostCSS Editor Styles] lets you do this in CSS.
 
 ```pcss
-:root {
+:root {           // ignored
   --color-text: #24292e;
 }
 
-html {
+html {            // removed
+  font-family: sans-serif;
+}
+
+body {            // replaced
   color: var(--color-text);
 }
 
-.block-heading {
+button {          // scoped and negated
+  min-height: 1.5rem;
+}
+
+.block-heading {  // scoped
   background-color: #eee;
 }
 
 /* becomes */
 
-[data-block] {
+:root {
   --color-text: #24292e;
 }
 
-[data-block] {
+.editor-styles-wrapper {
   color: var(--color-text);
 }
 
-[data-block] .block-heading {
+.editor-styles-wrapper button:not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns]) {
+  min-height: 1.5rem;
+}
+
+.editor-styles-wrapper .block-heading {
   background-color: #eee;
 }
 ```
 
 ## Usage
 
-Add [PostCSS Scope To] to your project:
+Add [PostCSS Editor Styles] to your project:
 
 ```bash
-npm install postcss-scope-to --save-dev
+npm install postcss-editor-styles --save-dev
 ```
 
-Use [PostCSS Scope To] to process your CSS:
+Use [PostCSS Editor Styles] to process your CSS:
 
 ```js
-const postcssScopeTo = require("postcss-scope-to");
+const postcssScopeTo = require("postcss-editor-styles");
 
 postcssScopeTo.process(YOUR_CSS /*, processOptions, pluginOptions */);
 ```
@@ -54,24 +66,45 @@ Or use it as a [PostCSS] plugin:
 
 ```js
 const postcss = require("postcss");
-const postcssScopeTo = require("postcss-scope-to");
+const postcssScopeTo = require("postcss-editor-styles");
 
 postcss([postcssScopeTo(/* pluginOptions */)]).process(
   YOUR_CSS /*, processOptions */
 );
 ```
 
-[PostCSS Scope To] runs in all Node environments, with special instructions for:
+## Options
+defaults:
+```
+        // The selector we're working within.
+    scopeTo: '.editor-styles-wrapper',
+
+        // Increase specificity by repeating the selector.
+    repeat: 1,
+
+    remove: ['html'],
+
+    replace: ['body'],
+
+    ignore: [':root'],
+
+    tags: ['a', 'button', 'input', 'label', 'select', 'textarea', 'form'],
+
+    tagSuffix: ':not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns])'
+```
+
+
+[PostCSS Editor Styles] runs in all Node environments, with special instructions for:
 
 | [Node](INSTALL.md#node) | [PostCSS CLI](INSTALL.md#postcss-cli) | [Webpack](INSTALL.md#webpack) | [Create React App](INSTALL.md#create-react-app) | [Gulp](INSTALL.md#gulp) | [Grunt](INSTALL.md#grunt) |
 | ----------------------- | ------------------------------------- | ----------------------------- | ----------------------------------------------- | ----------------------- | ------------------------- |
 
 
-[cli-img]: https://img.shields.io/travis/m-e-h/postcss-scope-to.svg
-[cli-url]: https://travis-ci.org/m-e-h/postcss-scope-to
+[cli-img]: https://img.shields.io/travis/m-e-h/postcss-editor-styles.svg
+[cli-url]: https://travis-ci.org/m-e-h/postcss-editor-styles
 [git-img]: https://img.shields.io/badge/support-chat-blue.svg
 [git-url]: https://gitter.im/postcss/postcss
-[npm-img]: https://img.shields.io/npm/v/postcss-scope-to.svg
-[npm-url]: https://www.npmjs.com/package/postcss-scope-to
+[npm-img]: https://img.shields.io/npm/v/postcss-editor-styles.svg
+[npm-url]: https://www.npmjs.com/package/postcss-editor-styles
 [postcss]: https://github.com/postcss/postcss
-[postcss scope to]: https://github.com/m-e-h/postcss-scope-to
+[PostCSS Editor Styles]: https://github.com/m-e-h/postcss-editor-styles

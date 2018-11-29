@@ -1,11 +1,15 @@
-[data-block] {
+:root {
 	--color-text: #24292e;
 }
 
-[data-block] {
+.editor-styles-wrapper {
 	color: var(--color-text);
 }
 
-[data-block] .block-heading {
+.editor-styles-wrapper button:not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns]) {
+	min-height: 1.5rem;
+}
+
+.editor-styles-wrapper .block-heading {
 	background-color: #eee;
 }
