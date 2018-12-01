@@ -6,24 +6,24 @@
 
 [PostCSS Editor Styles] lets you do this in CSS.
 
-```pcss
-:root {           // ignored
+```css
+:root {           /* ignored */
   --color-text: #24292e;
 }
 
-html {            // removed
+html {            /* removed */
   font-family: sans-serif;
 }
 
-body {            // replaced
+body {            /* replaced */
   color: var(--color-text);
 }
 
-button {          // scoped and negated
+button {          /* scoped and negated */
   min-height: 1.5rem;
 }
 
-.block-heading {  // scoped
+.block-heading {  /* scoped */
   background-color: #eee;
 }
 
@@ -57,40 +57,40 @@ npm install postcss-editor-styles --save-dev
 Use [PostCSS Editor Styles] to process your CSS:
 
 ```js
-const postcssScopeTo = require("postcss-editor-styles");
+const postcssEditorStyles = require("postcss-editor-styles");
 
-postcssScopeTo.process(YOUR_CSS /*, processOptions, pluginOptions */);
+postcssEditorStyles.process(YOUR_CSS /*, processOptions, pluginOptions */);
 ```
 
 Or use it as a [PostCSS] plugin:
 
 ```js
 const postcss = require("postcss");
-const postcssScopeTo = require("postcss-editor-styles");
+const postcssEditorStyles = require("postcss-editor-styles");
 
-postcss([postcssScopeTo(/* pluginOptions */)]).process(
+postcss([postcssEditorStyles(/* pluginOptions */)]).process(
   YOUR_CSS /*, processOptions */
 );
 ```
 
 ## Options
 defaults:
-```
-        // The selector we're working within.
-    scopeTo: '.editor-styles-wrapper',
+```js
+// The selector we're working within.
+scopeTo: '.editor-styles-wrapper',
 
-        // Increase specificity by repeating the selector.
-    repeat: 1,
+// Increase specificity by repeating the selector.
+repeat: 1,
 
-    remove: ['html'],
+remove: ['html'],
 
-    replace: ['body'],
+replace: ['body'],
 
-    ignore: [':root'],
+ignore: [':root'],
 
-    tags: ['a', 'button', 'input', 'label', 'select', 'textarea', 'form'],
+tags: ['a', 'button', 'input', 'label', 'select', 'textarea', 'form'],
 
-    tagSuffix: ':not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns])'
+tagSuffix: ':not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns])'
 ```
 
 

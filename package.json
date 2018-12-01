@@ -1,39 +1,40 @@
 {
-  "name": "postcss-editor-styles",
-  "version": "0.1.0",
-  "description": "Remove your CSS from the global scope ",
-  "author": "m-e-h <info@martyhelmick.com>",
-  "license": "CC0-1.0",
-  "repository": "m-e-h/postcss-editor-styles",
-  "homepage": "https://github.com/m-e-h/postcss-editor-styles#readme",
-  "bugs": "https://github.com/m-e-h/postcss-editor-styles/issues",
-  "main": "index.js",
-  "scripts": {
-    "prepublishOnly": "npm test",
-    "test": "echo 'Running tests...'; npm run test:tape",
-    "test:tape": "postcss-tape"
-  },
-  "engines": {
-    "node": ">=8.0.0"
-  },
-  "dependencies": {
-    "postcss": "^7.0.5"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.6.1",
-    "eslint-config-wordpress": "^2.0.0",
-    "postcss-tape": "^2.2.0",
-    "pre-commit": "^1.2.2"
-  },
-  "eslintConfig": {
-    "extends": "wordpress",
-    "parser": "babel-eslint"
-  },
-  "keywords": [
-    "postcss",
-    "css",
-    "postcss-plugin",
-    "wordpress"
-  ]
+	"name": "postcss-editor-styles",
+	"version": "0.1.1",
+	"description": "Remove your editor-styles from the global scope ",
+	"author": "m-e-h <info@martyhelmick.com>",
+	"license": "GPL-2.0+",
+	"repository": "m-e-h/postcss-editor-styles",
+	"homepage": "https://github.com/m-e-h/postcss-editor-styles#readme",
+	"bugs": "https://github.com/m-e-h/postcss-editor-styles/issues",
+	"main": "index.js",
+	"scripts": {
+		"prepublishOnly": "npm test",
+		"test": "echo 'Running tests...'; npm run test:tape",
+		"test:tape": "postcss-tape"
+	},
+	"engines": {
+		"node": ">=8.0.0"
+	},
+	"dependencies": {
+		"postcss": "^7.0.6"
+	},
+	"devDependencies": {
+		"babel-eslint": "^10.0.1",
+		"eslint": "^5.9.0",
+		"eslint-config-wordpress": "^2.0.0",
+		"postcss-tape": "^2.2.0",
+		"pre-commit": "^1.2.2"
+	},
+	"eslintConfig": {
+		"extends": "wordpress",
+		"parser": "babel-eslint"
+	},
+	"keywords": [
+		"postcss",
+		"css",
+		"postcss-plugin",
+		"wordpress",
+		"gutenberg"
+	]
 }

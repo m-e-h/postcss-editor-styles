@@ -1,19 +1,95 @@
 :root {
-	--color-text: #24292e;
+    --color-text: #24292e;
 }
 
 html {
-	font-family: sans-serif;
+    font-family: sans-serif;
 }
 
 body {
-	color: var(--color-text);
+    color: var(--color-text);
 }
 
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+[type="button"],
+[type="reset"],
+[type="submit"],
 button {
-	min-height: 1.5rem;
+    -webkit-appearance: button;
+}
+
+button:focus,
+button:hover {
+    box-shadow: inset 0 0 0 20rem rgba(189, 196, 201, 0.3);
 }
 
 .block-heading {
-	background-color: #eee;
+    background-color: #eee;
+}
+
+i {
+    font-family: icons;
+}
+
+a {
+    font-weight: 700;
+}
+
+a {
+    color: blue;
+}
+
+#my_id {
+    display: flex;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+hr {
+    overflow: visible;
+}
+
+main {
+    display: block;
+}
+
+nav ol,
+nav ul {
+    list-style: none;
+}
+
+pre {
+    font-size: 1em;
+}
+
+abbr[title] {
+    text-decoration: underline dotted;
+}
+
+small {
+    font-size: 80%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td,
+th,
+tr {
+    color: #b2b2b2;
 }

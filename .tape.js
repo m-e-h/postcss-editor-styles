@@ -1,6 +1,6 @@
 module.exports = {
 	'postcss-editor-styles': {
-		'basic': {
+		basic: {
 			message: 'supports basic usage'
 		}
 	}
