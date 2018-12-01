@@ -11,7 +11,8 @@
 	"scripts": {
 		"prepublishOnly": "npm test",
 		"test": "echo 'Running tests...'; npm run test:tape",
-		"test:tape": "postcss-tape"
+		"test:tape": "postcss-tape",
+		"np": "npx np"
 	},
 	"engines": {
 		"node": ">=8.0.0"
@@ -23,6 +24,7 @@
 		"babel-eslint": "^10.0.1",
 		"eslint": "^5.9.0",
 		"eslint-config-wordpress": "^2.0.0",
+		"np": "^3.0.4",
 		"postcss-tape": "^2.2.0",
 		"pre-commit": "^1.2.2"
 	},
