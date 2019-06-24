@@ -44,7 +44,7 @@ button {
     box-sizing: border-box;
 }
 
-@keyframes test {
+@keyframes spinner {
 	0% {
 		transform: rotate(0deg);
 	}
@@ -52,5 +52,3 @@ button {
 		transform: rotate(360deg);
 	}
 }
-
-
