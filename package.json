@@ -1,6 +1,6 @@
 {
 	"name": "postcss-editor-styles",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "Remove your editor-styles from the global scope ",
 	"author": "m-e-h <info@martyhelmick.com>",
 	"license": "GPL-2.0+",
