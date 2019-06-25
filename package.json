@@ -21,12 +21,11 @@
 		"postcss": "^7.0.14"
 	},
 	"devDependencies": {
-		"babel-eslint": "^10.0.1",
-		"eslint": "^5.12.1",
+		"babel-eslint": "^10.0.2",
+		"eslint": "^6.0.1",
 		"eslint-config-wordpress": "^2.0.0",
-		"np": "^4.0.2",
-		"postcss-tape": "^4.0.0",
-		"pre-commit": "^1.2.2"
+		"np": "^5.0.3",
+		"postcss-tape": "^5.0.0"
 	},
 	"eslintConfig": {
 		"extends": "wordpress",

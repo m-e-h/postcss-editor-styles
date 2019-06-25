@@ -32,7 +32,7 @@ module.exports = postcss.plugin( 'postcss-editor-styles', options => {
 			':not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns]):not([id^="mceu_"])'
 	};
 
-	const opts = Object.assign({}, defaults, options );
+	const opts = { ...defaults, ...options };
 
 	return root => {
 		root.walkRules( rule => {
