@@ -37,6 +37,10 @@ module.exports = postcss.plugin( 'postcss-editor-styles', options => {
 	return root => {
 		root.walkRules( rule => {
 			rule.selectors = rule.selectors.map( selector => {
+				if ( rule.parent.type === 'atrule' && rule.parent.name === 'keyframes' ) {
+					return selector;
+				}
+
 				if ( -1 !== opts.remove.indexOf( selector ) ) {
 					return rule.remove();
 				}
