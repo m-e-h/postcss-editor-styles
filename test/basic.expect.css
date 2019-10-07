@@ -6,6 +6,14 @@
     color: var(--color-text);
 }
 
+.editor-styles-wrapper a:not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns]):not([id^="mceu_"]) {
+	text-decoration: underline;
+}
+
+.editor-styles-wrapper main a:not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns]):not([id^="mceu_"]) {
+	text-decoration: none;
+}
+
 .editor-styles-wrapper {
 	background-color: green;
 }

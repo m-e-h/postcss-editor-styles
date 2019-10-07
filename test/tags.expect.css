@@ -1,0 +1,55 @@
+.editor-styles-wrapper button:not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns]):not([id^="mceu_"]) {
+    box-shadow: inset 0 0 0 20rem rgba(189, 196, 201, 0.3);
+}
+
+.editor-styles-wrapper button:focus:not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns]):not([id^="mceu_"]),
+.editor-styles-wrapper button:hover:not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns]):not([id^="mceu_"]) {
+    box-shadow: none;
+}
+
+.editor-styles-wrapper .some button:not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns]):not([id^="mceu_"]) {
+    font-family: icons;
+}
+
+.editor-styles-wrapper form a:not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns]):not([id^="mceu_"]) {
+    color: red;
+}
+
+.editor-styles-wrapper a:not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns]):not([id^="mceu_"]) {
+    font-weight: 700;
+}
+
+.editor-styles-wrapper h1 {
+    font-size: 2em;
+}
+
+.editor-styles-wrapper hr {
+    overflow: visible;
+}
+
+.editor-styles-wrapper input[type="submit"]:not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns]):not([id^="mceu_"]) {
+    display: block;
+}
+
+.editor-styles-wrapper nav ol,
+.editor-styles-wrapper nav ul {
+    list-style: none;
+}
+
+.editor-styles-wrapper [type="submit"]:not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns]):not([id^="mceu_"]) {
+    font-size: 1em;
+}
+
+.editor-styles-wrapper input[type="submit"]:not([class^="components-"]):not([class^="editor-"]):not([class^="block-"]):not([aria-owns]):not([id^="mceu_"]) {
+    font-size: 1em;
+}
+
+.editor-styles-wrapper abbr[title] {
+    text-decoration: underline dotted;
+}
+
+.editor-styles-wrapper td,
+.editor-styles-wrapper th,
+.editor-styles-wrapper tr {
+    color: #b2b2b2;
+}

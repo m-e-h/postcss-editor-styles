@@ -6,6 +6,6 @@ html .block {
     background-color: #000;
 }
 
-html.no-js {
+html {
     font-family: serif;
 }

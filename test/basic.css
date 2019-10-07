@@ -10,6 +10,14 @@ body {
     color: var(--color-text);
 }
 
+a {
+	text-decoration: underline;
+}
+
+main a {
+	text-decoration: none;
+}
+
 .editor-styles-wrapper {
 	background-color: green;
 }

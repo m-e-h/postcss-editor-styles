@@ -1,0 +1,7 @@
+:root .button__link {
+	color: blue;
+}
+
+:root {
+	--css-var: #000;
+}

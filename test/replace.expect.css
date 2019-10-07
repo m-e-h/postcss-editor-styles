@@ -1,0 +1,15 @@
+.editor-styles-wrapper {
+    color: black;
+}
+
+.editor-styles-wrapper .block {
+    color: blue;
+}
+
+.editor-styles-wrapper body.block {
+    background-color: red;
+}
+
+.editor-styles-wrapper article {
+	margin: 0;
+}

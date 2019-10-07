@@ -9,3 +9,7 @@ body .block {
 body.block {
     background-color: red;
 }
+
+body article {
+	margin: 0;
+}

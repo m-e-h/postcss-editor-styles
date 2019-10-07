@@ -1,18 +1,22 @@
-button:focus,
-button:hover {
+button {
     box-shadow: inset 0 0 0 20rem rgba(189, 196, 201, 0.3);
 }
 
-i {
-    font-family: icons;
+button:focus,
+button:hover {
+    box-shadow: none;
 }
 
-a {
-    font-weight: 700;
+.some button {
+    font-family: icons;
 }
 
 form a {
     color: red;
+}
+
+a {
+    font-weight: 700;
 }
 
 h1 {
@@ -32,7 +36,11 @@ nav ul {
     list-style: none;
 }
 
-pre {
+[type="submit"] {
+    font-size: 1em;
+}
+
+input[type="submit"] {
     font-size: 1em;
 }
 

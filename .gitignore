@@ -6,3 +6,5 @@ yarn.lock
 *.code-workspace
 *.result.css
 /.eslintcache
+.vscode/launch.json
+.DS_Store
