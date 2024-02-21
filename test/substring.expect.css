@@ -1,0 +1,19 @@
+.component-library h1 {
+  font-size: 2rem;
+}
+
+.component-library b {
+  font-weight: 600;
+}
+
+.component-library li {
+  padding-left: 4px;
+}
+
+.component-library button {
+  outline: none;
+}
+
+.component-library a {
+  text-decoration: none;
+}
