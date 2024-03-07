@@ -2,19 +2,26 @@ const { postcssTape } = require('@csstools/postcss-tape');
 const plugin = require('../index.js');
 
 postcssTape(plugin)({
-	'basic': {
+	basic: {
 		message: 'supports basic usage'
 	},
-	'remove': {
+	remove: {
 		message: 'supports remove usage'
 	},
-	'replace': {
+	replace: {
 		message: 'supports replace usage'
 	},
-	'ignore': {
+	ignore: {
 		message: 'supports ignore usage'
 	},
-	'tags': {
+	tags: {
 		message: 'supports tags usage'
+	},
+	substring: {
+		message: 'supports selectors that are a substring of scopeTo',
+		options: {
+			scopeTo: `.component-library`,
+			tags: [],
+		}
 	}
 });

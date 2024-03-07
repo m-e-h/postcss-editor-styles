@@ -97,7 +97,7 @@ module.exports = (options = {}) => {
 					}`;
 				}
 
-				if (firstOrLastSelector(opts.scopeTo, selectArr)) {
+				if (firstOrLastSelector([opts.scopeTo], selectArr)) {
 					return selector;
 				}
 
