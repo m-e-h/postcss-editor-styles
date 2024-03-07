@@ -13,5 +13,12 @@ module.exports = {
 	},
 	tags: {
 		message: 'supports tags usage'
+	},
+	substring: {
+		message: 'supports selectors that are a substring of scopeTo',
+		options: {
+			scopeTo: `.component-library`,
+			tags: [],
+		}
 	}
 };

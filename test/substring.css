@@ -1,0 +1,19 @@
+h1 {
+  font-size: 2rem;
+}
+
+b {
+  font-weight: 600;
+}
+
+li {
+  padding-left: 4px;
+}
+
+button {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
