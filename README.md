@@ -1,10 +1,8 @@
 # PostCSS Editor Styles [<img src="https://postcss.github.io/postcss/logo.svg" alt="PostCSS" width="90" height="90" align="right">][postcss]
 
 [![NPM Version][npm-img]][npm-url]
-[![Build Status][cli-img]][cli-url]
-[![Support Chat][git-img]][git-url]
 
-[PostCSS Editor Styles] lets you do this in CSS.
+PostCSS Editor Styles lets you do this in CSS.
 
 ```css
 :root {           /* ignored */
@@ -48,13 +46,13 @@ button {          /* scoped and negated */
 
 ## Usage
 
-Add [PostCSS Editor Styles] to your project:
+Add PostCSS Editor Styles to your project:
 
 ```bash
 npm install postcss-editor-styles --save-dev
 ```
 
-Use [PostCSS Editor Styles] to process your CSS:
+Use PostCSS Editor Styles to process your CSS:
 
 ```js
 const postcssEditorStyles = require("postcss-editor-styles");
@@ -94,17 +92,12 @@ tagSuffix: ':not([class^="components-"]):not([class^="editor-"]):not([class^="bl
 ```
 
 
-[PostCSS Editor Styles] runs in all Node environments, with special instructions for:
+PostCSS Editor Styles runs in all Node environments, with special instructions for:
 
 | [Node](INSTALL.md#node) | [PostCSS CLI](INSTALL.md#postcss-cli) | [Webpack](INSTALL.md#webpack) | [Create React App](INSTALL.md#create-react-app) | [Gulp](INSTALL.md#gulp) | [Grunt](INSTALL.md#grunt) |
 | ----------------------- | ------------------------------------- | ----------------------------- | ----------------------------------------------- | ----------------------- | ------------------------- |
 
 
-[cli-img]: https://img.shields.io/travis/m-e-h/postcss-editor-styles.svg
-[cli-url]: https://travis-ci.org/m-e-h/postcss-editor-styles
-[git-img]: https://img.shields.io/badge/support-chat-blue.svg
-[git-url]: https://gitter.im/postcss/postcss
 [npm-img]: https://img.shields.io/npm/v/postcss-editor-styles.svg
 [npm-url]: https://www.npmjs.com/package/postcss-editor-styles
 [postcss]: https://github.com/postcss/postcss
-[PostCSS Editor Styles]: https://github.com/m-e-h/postcss-editor-styles

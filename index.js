@@ -1,6 +1,4 @@
-const postcss = require('postcss');
-
-module.exports = postcss.plugin('postcss-editor-styles', options => {
+module.exports = (options = {}) => {
 	const defaults = {
 		// The selector we're working within.
 		scopeTo: '.editor-styles-wrapper',
@@ -57,7 +55,9 @@ module.exports = postcss.plugin('postcss-editor-styles', options => {
 		return selectorIn;
 	};
 
-	return root => {
+	return {
+		postcssPlugin: 'postcss-editor-styles',
+		Root (root, postcss) {
 		root.walkRules(rule => {
 			rule.selectors = rule.selectors.map(selector => {
 				const selectArr = selector.split(' ');
@@ -105,5 +105,8 @@ module.exports = postcss.plugin('postcss-editor-styles', options => {
 				return `${opts.scopeTo.repeat(opts.repeat)} ${selector}`;
 			});
 		});
+	}
 	};
-});
+};
+
+module.exports.postcss = true;

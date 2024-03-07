@@ -9,29 +9,29 @@
 	"bugs": "https://github.com/m-e-h/postcss-editor-styles/issues",
 	"main": "index.js",
 	"scripts": {
-		"prepublishOnly": "npm test",
-		"test": "echo 'Running tests...'; npm run test:tape",
-		"test:tape": "postcss-tape",
-		"np": "npx np"
+		"test": "node --test",
+		"release": "np"
 	},
 	"engines": {
-		"node": ">=8.0.0"
+		"node": "^16 || >=18"
 	},
-	"dependencies": {
-		"postcss": "^7.0.18"
+	"peerDependencies": {
+	  "postcss": "^8.4.35"
 	},
 	"devDependencies": {
-		"babel-eslint": "^10.0.3",
-		"eslint": "^6.5.1",
-		"@wordpress/eslint-plugin": "^3.1.0",
-		"np": "^5.1.0",
-		"postcss-tape": "^5.0.2"
+		"@csstools/postcss-tape": "*",
+		"eslint": "^8.56.0",
+		"np": "^10.0.0"
 	},
 	"eslintConfig": {
-		"extends": [
-			"plugin:@wordpress/eslint-plugin/recommended"
-		],
-		"parser": "babel-eslint"
+	  "parserOptions": {
+		"ecmaVersion": 2018
+	  },
+	  "env": {
+		"node": true,
+		"es6": true
+	  },
+	  "extends": ["eslint:recommended"]
 	},
 	"keywords": [
 		"postcss",

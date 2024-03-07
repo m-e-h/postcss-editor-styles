@@ -1,4 +1,7 @@
-module.exports = {
+const { postcssTape } = require('@csstools/postcss-tape');
+const plugin = require('../index.js');
+
+postcssTape(plugin)({
 	basic: {
 		message: 'supports basic usage'
 	},
@@ -21,4 +24,4 @@ module.exports = {
 			tags: [],
 		}
 	}
-};
+});
