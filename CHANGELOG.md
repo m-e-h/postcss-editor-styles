@@ -1,5 +1,9 @@
 # Changes to PostCSS Editor Styles
 
+### 0.5.0 (March 7, 2024)
+
+- Allow using `:where()` pseudo class in options to account for every `:where(*)` selectors.
+
 ### 0.4.0 (March 7, 2024)
 
 - Fixed a bug where some tags weren't getting scoped ([#5](https://github.com/m-e-h/postcss-editor-styles/pull/5)) thanks to @animeshk874

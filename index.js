@@ -39,13 +39,33 @@ module.exports = (options = {}) => {
 
 	const opts = { ...defaults, ...options };
 
+	// Detect if there is a :where() pseudo class in the selectors.
+	const hasWherePseudo = (optionsVal, selectors) => {
+		let optionHasWhere = false;
+
+		if (typeof optionsVal === 'string') {
+			optionHasWhere = ':where()' === optionsVal;
+		} else if (Array.isArray(optionsVal)) {
+			optionHasWhere = optionsVal.find((el) => el === ':where()');
+		}
+
+		if (!optionHasWhere) {
+			return false;
+		}
+
+		return selectors.find((el) => el.startsWith(':where('));
+	}
+
 	const firstOrLastSelector = (optsArray, selectorArray) => {
 		let firstSelector = selectorArray[0];
 		let lastSelector = selectorArray[selectorArray.length - 1];
+		const whereMatch = hasWherePseudo(optsArray, [firstSelector, lastSelector]);
 
 		var selectorIn = [];
 
-		if (-1 !== optsArray.indexOf(firstSelector)) {
+		if(whereMatch) {
+			selectorIn.push(whereMatch);
+		} else if (-1 !== optsArray.indexOf(firstSelector)) {
 			selectorIn.push(firstSelector);
 		} else if (-1 !== optsArray.indexOf(lastSelector)) {
 			selectorIn.push(lastSelector);

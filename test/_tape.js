@@ -3,7 +3,10 @@ const plugin = require('../index.js');
 
 postcssTape(plugin)({
 	basic: {
-		message: 'supports basic usage'
+		message: 'supports basic usage',
+		options: {
+			ignore: [':root', ':where()'],
+		}
 	},
 	remove: {
 		message: 'supports remove usage'

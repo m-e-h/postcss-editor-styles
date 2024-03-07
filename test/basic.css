@@ -1,3 +1,7 @@
+:where(.wp-site-blocks) li {
+	border-bottom: 1px solid #e1e4e8;
+}
+
 :root {
     --color-text: #24292e;
 }
