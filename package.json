@@ -1,6 +1,6 @@
 {
 	"name": "postcss-editor-styles",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"description": "Remove your editor-styles from the global scope ",
 	"author": "m-e-h <info@martyhelmick.com>",
 	"license": "GPL-2.0+",
@@ -16,7 +16,7 @@
 		"node": "^16 || >=18"
 	},
 	"peerDependencies": {
-	  "postcss": "^8.4.35"
+		"postcss": "^8.4.35"
 	},
 	"devDependencies": {
 		"@csstools/postcss-tape": "*",
@@ -24,14 +24,16 @@
 		"np": "^10.0.0"
 	},
 	"eslintConfig": {
-	  "parserOptions": {
-		"ecmaVersion": 2018
-	  },
-	  "env": {
-		"node": true,
-		"es6": true
-	  },
-	  "extends": ["eslint:recommended"]
+		"parserOptions": {
+			"ecmaVersion": 2018
+		},
+		"env": {
+			"node": true,
+			"es6": true
+		},
+		"extends": [
+			"eslint:recommended"
+		]
 	},
 	"keywords": [
 		"postcss",
